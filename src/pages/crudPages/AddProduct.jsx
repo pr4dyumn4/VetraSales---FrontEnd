@@ -14,7 +14,7 @@ function AddProduct() {
         if ("" in product) {
             alert("Please fill all fields")
         }
-        axios.post("http://localhost:8080/api/addProduct", product)
+        axios.post("http://localhost:8080/api/addProduct", product,{headers: { "Content-Type": "application/json" }})
         .then(res => {
         console.log("Add Product")
         console.log(res.data);
