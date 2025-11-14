@@ -41,7 +41,7 @@ function UpdateProduct() {
             <label>Image: </label>
             <input type="Text" value={image} onChange={(e) => setImage(e.target.value)}/>
             <br /><br />
-            <button type="submit">ADD Product</button>
+            <button type="submit">Update Product</button>
         </form>
     </>);
 }

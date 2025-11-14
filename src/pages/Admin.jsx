@@ -11,7 +11,7 @@ function Admin() {
 
   const fetchProducts = () => {
     axios
-      .get('http://localhost:8080/api/getAllProducts')
+      .get('http://localhost:8080/getAllProducts')
       .then(res => setProducts(res.data))
       .catch(err => console.error('Failed to fetch products:', err));
   };
@@ -19,7 +19,7 @@ function Admin() {
   // 2. Delete by ID, then refresh
   const handleDelete = (id) => {
     axios
-      .get('http://localhost:8080/api/deleteProduct', { params: { id } })
+      .get('http://localhost:8080/deleteProduct', { params: { id } })
       .then(() => fetchProducts())
       .catch(err => console.error('Delete failed:', err));
   };
