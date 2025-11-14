@@ -30,7 +30,7 @@ useEffect(() => {
         navigate(`/product/${productId}/reviews`);
       };
     const fetchProducts = () => {
-        axios.get('http://localhost:8080/api/getAllProducts')
+        axios.get('http://localhost:8080/getAllProducts')
             .then(res => {
                 setProducts(res.data)
                 
