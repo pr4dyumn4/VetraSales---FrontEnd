@@ -17,9 +17,9 @@ function Admin() {
   };
 
   // 2. Delete by ID, then refresh
-  const handleDelete = (id) => {
+  const handleDelete = (productId) => {
     axios
-      .get('http://localhost:8080/deleteProduct', { params: { id } })
+      .get('http://localhost:8080/deleteProduct', { params: { productId } })
       .then(() => fetchProducts())
       .catch(err => console.error('Delete failed:', err));
   };

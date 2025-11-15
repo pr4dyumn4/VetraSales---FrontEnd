@@ -12,7 +12,7 @@ function UpdateProduct() {
     const [image, setImage] = useState(prod?.image || '')
     const handleSubmit = (event) => {
         event.preventDefault();
-        const product = {id,name,price: parseInt(price, 10),description,image}
+        const product = {id:id,name:name,price:price,description:description,image:image}
         axios.post("http://localhost:8080/updateProduct", product,{headers: { "Content-Type": "application/json" }})
         .then(res => {
         console.log("Update Product")

@@ -10,7 +10,7 @@ function AddProduct() {
     const navigate = useNavigate()
     const handleSubmit = (event) => {
         event.preventDefault();
-        const product = {name,price,description,image,adminUsername}
+        const product = {name:name,price:price,description:description,image:image,adminName:adminUsername}
         if ("" in product) {
             alert("Please fill all fields")
         }
