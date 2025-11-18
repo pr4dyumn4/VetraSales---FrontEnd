@@ -17,7 +17,7 @@ function Signup() {
     if ("" in user) {
         alert("Please fill in all fields");
     }
-    axios.post("http://localhost:8080/api/signUp", user,{headers: { "Content-Type": "application/json" }})
+    axios.post("http://localhost:8080/signUp", user,{headers: { "Content-Type": "application/json" }})
         .then(res => {
         console.log("Sign UP")
         console.log(res.data);

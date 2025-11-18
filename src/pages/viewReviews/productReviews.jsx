@@ -42,12 +42,10 @@ function ProductReviews() {
   }, [id, currentUser]);
 
   const back = () => {
-    if (role === "Customer") {
+    if (role === "customer") {
       navigate('/customer_page');
     } else if (role === "admin") {
       navigate('/admin_page');
-    } else {
-      navigate('/'); // fallback
     }
   };
 

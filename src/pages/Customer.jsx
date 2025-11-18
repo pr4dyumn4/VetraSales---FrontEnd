@@ -39,7 +39,7 @@ useEffect(() => {
     };
     const fetchReviews = (products) => {
       products.forEach(product => {
-        axios.get(`http://localhost:8080/product/${product.id}`)
+        axios.get(`http://localhost:8080/listOfReview?productId=${product.id}`)
         .then(response => {
           let reviews = response.data;
           if (!Array.isArray(reviews)) {

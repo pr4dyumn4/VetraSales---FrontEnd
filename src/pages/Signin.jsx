@@ -12,7 +12,7 @@ function Signin() {
     if ("" in data) {
         alert("Please fill in all fields");
     }
-    axios.post("http://localhost:8080/api/signIn", data).then(res => {
+    axios.post("http://localhost:8080/signIn", data).then(res => {
         console.log('Sign in OK:',res.data);
         console.info('username: ',username);
         console.info('password: ',password);

@@ -21,14 +21,16 @@ export default function ViewCart() {
 
 
   const fetchCart = () => {
-    axios.get('http://localhost:8080/viewCart', { params: { username } })
-      .then(res => setItems(res.data))
+    axios.get('http://localhost:8080/api/viewCart', { params: { username } })
+      .then(res => setItems(res.data || []))
       .catch(err => console.error('Fetch cart failed:', err));
   };
 
   const removeItem = (id) => {
     axios.get(`http://localhost:8080/removeItem?prod_id=${id}`)
-      .then(() => setItems(items => items.filter(item => item.productId !== id)))
+      .then(res => {() => setItems(items => items.filter(item => item.productId !== id))
+  console.info(res.data)
+})
       .catch(err => console.error('Failed to remove item', err));
   };
 
@@ -39,7 +41,7 @@ export default function ViewCart() {
       return;
     }
     const payload = { username, productId, quantity: newQty };
-    axios.post('http://localhost:8080/updateCartItem', payload)
+    axios.post('http://localhost:8080/api/updateCartItem', payload)
       .then(() => fetchCart())
       .catch(err => console.error('❌ Update cart failed:', err));
   };
@@ -117,7 +119,7 @@ const makePayment = async () => {
                 </tr>
               </thead>
               <tbody>
-                {items.map(it => (
+                {Array.isArray(items) && items.length > 0 ? ( items.map(it => (
                   <tr key={it.productId}>
                     <td><img src={it.image} alt={it.name} width="80" /></td>
                     <td>{it.name}</td>
@@ -130,7 +132,10 @@ const makePayment = async () => {
                       <button onClick={() => removeItem(it.productId)}>Remove</button>
                     </td>
                   </tr>
-                ))}
+                ))
+              ) : (
+                      <p>No items in cart</p>
+                )}
               </tbody>
             </table>
             <h3>Total: ₹{calculateTotal()}</h3>
