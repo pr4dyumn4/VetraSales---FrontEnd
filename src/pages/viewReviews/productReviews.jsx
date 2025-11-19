@@ -85,6 +85,7 @@ function ProductReviews() {
       {role === "customer" && (
         <button onClick={addFeedback}>Give FeedBack</button>
       )}
+      {role === "admin" ?<button onClick={() => deleteByProduct(id)}> Delete All reviews of this product </button>:""}
       <h1>Product Reviews</h1>
       <p>Average Rating: {getAverageStars(reviews)}</p>
       <hr />
@@ -95,7 +96,7 @@ function ProductReviews() {
             <p>Email: {r.reviewerName === currentUser ? "Your Email" : r.email}</p>
             <p>Rating: {r.rating}/5</p>
             <p>Comment: {r.comment}</p>
-            <button onClick={() => deleteReview(r.id)}> Delete </button>
+            {r.reviewerName === currentUser ?<button onClick={() => deleteReview(r.id)}> Delete </button>:""}
             <hr style={{ borderColor: "#444" }} />
           </div>
         ))}

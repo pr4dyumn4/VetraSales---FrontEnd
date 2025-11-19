@@ -8,7 +8,7 @@ function FindProduct({ productId }) {
     if (!productId) return;
     axios
       .get("http://localhost:8080/searchProductById", {
-        params: { productId }
+        params: { productId:productId }
       })
       .then((response) => {
         setProduct(response.data);
@@ -41,7 +41,7 @@ function FindProduct({ productId }) {
           <td>{product.name || "N/A"}</td>
           <td>{product.description || "N/A"}</td>
           <td>{product.price || "N/A"}</td>
-          <td>{product.adminUsername || "N/A"}</td>
+          <td>{product.adminName || "N/A"}</td>
         </tr>
       </tbody>
     </table>

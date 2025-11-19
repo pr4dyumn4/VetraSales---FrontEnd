@@ -35,8 +35,7 @@ function AllReviews() {
         {reviews.map((r, index) => (
             <div key={r.id || index}>
             <FindProduct productId={r.productId}/>
-            <p>Customer name: {r.username}</p>
-            <p>Email: {r.email}</p>
+            <p>Customer name: {r.reviewerName}</p>
             <p>Rating: {r.rating}/5</p>
             <p>Comment: {r.comment}</p>
             <hr style={{ borderColor: "#444" }} />
