@@ -1,4 +1,10 @@
 [[redirects]]
+  # If the frontend tries to call /api/*
+  from = "/*" 
+  # Redirect it to the public Railway URL
+  to = "https://vetrasales-backend-production.up.railway.app/:splat" 
+  status = 200
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
