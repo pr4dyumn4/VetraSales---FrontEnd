@@ -70,7 +70,7 @@ useEffect(() => {
         quantity: cartItems[prod] || 1
     };
 
-    axios.post('http://localhost:8080/api/addToCart', data, {
+    axios.post('https://vetrasales-backend-production.up.railway.app/api/addToCart', data, {
         headers: {
             'Content-Type': 'application/json'
         }
