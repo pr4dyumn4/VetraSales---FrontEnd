@@ -13,7 +13,7 @@ function SearchBar({ setResults, setSearchStatus }) {
     }
 
     try {
-      const response = await axios.get(`http://localhost:8080/searchProduct?keyword=${input}`);
+      const response = await axios.get(`https://vetrasales-backend-production.up.railway.app/api/product/searchProduct?keyword=${input}`);
       const data = response.data;
 
       if (data.length > 0) {

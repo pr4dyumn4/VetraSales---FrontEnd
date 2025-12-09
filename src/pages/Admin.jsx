@@ -11,7 +11,7 @@ function Admin() {
 
   const fetchProducts = () => {
     axios
-      .get('https://vetrasales-backend-production.up.railway.app/getAllProducts')
+      .get('https://vetrasales-backend-production.up.railway.app/api/product/getAllProducts')
       .then(res => setProducts(res.data))
       .catch(err => console.error('Failed to fetch products:', err));
   };
@@ -19,7 +19,7 @@ function Admin() {
   // 2. Delete by ID, then refresh
   const handleDelete = (productId) => {
     axios
-      .get('https://vetrasales-backend-production.up.railway.app/deleteProduct', { params: { productId } })
+      .get('https://vetrasales-backend-production.up.railway.app/api/product/deleteProduct', { params: { productId } })
       .then(() => fetchProducts())
       .catch(err => console.error('Delete failed:', err));
   };
