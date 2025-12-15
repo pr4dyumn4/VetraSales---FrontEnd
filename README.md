@@ -44,5 +44,7 @@ Docker support is included for fast and portable deployment.
 
 ---
 
+## Roadmap Link:
+https://roadmap.sh/projects/scalable-ecommerce-platform
 ## 📁 Project Structure
 
